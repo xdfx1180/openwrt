@@ -251,7 +251,7 @@ jobs:
         CONFIG_PACKAGE_kmod-sky2=y
         CONFIG_PACKAGE_kmod-solos-pci=y
         CONFIG_PACKAGE_kmod-spi-ks8995=y
-        CONFIG_PACKAGE_kmod-sw        CONFIG=y
+        CONFIG_PACKAGE_kmod-swconfig=y
         CONFIG_PACKAGE_kmod-switch-bcm53xx=y
         CONFIG_PACKAGE_kmod-switch-bcm53xx-mdio=y
         CONFIG_PACKAGE_kmod-switch-ip17xx=y
