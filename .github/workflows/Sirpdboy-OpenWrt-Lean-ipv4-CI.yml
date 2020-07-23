@@ -24,7 +24,7 @@ jobs:
      - name: Checkout
        uses: actions/checkout@master
        with:
-          ref: main
+          ref: master
 
      - name: Init build
        env:
@@ -366,12 +366,12 @@ jobs:
         cd ./Firmware
         gzip *.img
      - name: Upload Firmware
-       uses: actions/upload-artifact@master
+       uses: actions/upload-artifact@main
        with:
           name: SirpdboyOpenWrt-IPV4-mini-Firmware
           path: ./Firmware/
      - name: Upload  IPK
-       uses: actions/upload-artifact@master
+       uses: actions/upload-artifact@main
        with:
           name: SirpdboyOpenWrt-IPV4-Ipk
           path: ./openwrt/bin/packages/
