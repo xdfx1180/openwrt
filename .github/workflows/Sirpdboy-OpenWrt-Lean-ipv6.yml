@@ -22,9 +22,9 @@ jobs:
     steps:
 
      - name: Checkout
-       uses: actions/checkout@master
+       uses: actions/checkout@main
        with:
-          ref: main
+          ref: master
 
      - name: Init Build
        env:
@@ -378,12 +378,12 @@ jobs:
         cd ./Firmware
         gzip *.img
      - name: Upload Firmware
-       uses: actions/upload-artifact@master
+       uses: actions/upload-artifact@main
        with:
           name: SirpdboyOpenWrt-IPV6-Firmware
           path: ./Firmware/
      - name: Upload  IPK
-       uses: actions/upload-artifact@master
+       uses: actions/upload-artifact@main
        with:
           name: SirpdboyOpenWrt-IPV6-Ipk
           path: ./openwrt/bin/packages/
