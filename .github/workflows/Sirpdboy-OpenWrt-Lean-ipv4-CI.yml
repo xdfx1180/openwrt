@@ -3,7 +3,7 @@
 # Author: sirpdboy
 # https://github.com/sirpdboy/Openwrt
 
-name: Sirpdboy-OpenWrt-Lean-ipv4-mini-CI
+name: Sirpdboy-OpenWrt-Lean-ipv6-mini-CI
 on:
   push:
     branches: 
@@ -97,10 +97,10 @@ jobs:
         # CONFIG_VMDK_IMAGES is not set
         EOF
         # IPv6支持:
-        # cat >> .config <<EOF 
-        # CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-        # CONFIG_PACKAGE_ipv6helper=y
-        # EOF 
+        cat >> .config <<EOF 
+        CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+        CONFIG_PACKAGE_ipv6helper=y
+        EOF 
         # 多文件系统支持:
         # cat >> .config <<EOF
         # CONFIG_PACKAGE_kmod-fs-nfs=y
@@ -129,7 +129,7 @@ jobs:
         CONFIG_PACKAGE_luci-app-autopoweroff=y
         # CONFIG_PACKAGE_autosamba is not set
         # CONFIG_PACKAGE_luci-app-accesscontrol is not set
-        # CONFIG_PACKAGE_luci-app-adbyby-plus is not set
+        CONFIG_PACKAGE_luci-app-adbyby-plus=y
         # CONFIG_PACKAGE_luci-app-ipsec-vpnd is not set
         CONFIG_PACKAGE_luci-app-nlbwmon=y
         # CONFIG_PACKAGE_luci-app-unblockmusic is not set
@@ -150,7 +150,7 @@ jobs:
         CONFIG_PACKAGE_luci-app-koolproxyR=y
         CONFIG_PACKAGE_luci-app-minidlna=m
         CONFIG_PACKAGE_luci-app-mwan3=y
-        CONFIG_PACKAGE_luci-app-netdata=y
+        CONFIG_PACKAGE_luci-app-netdata=m
         CONFIG_PACKAGE_luci-app-oaf=y
         CONFIG_PACKAGE_luci-app-openclash=y
         CONFIG_PACKAGE_luci-app-passwall=y
@@ -170,13 +170,13 @@ jobs:
         cat >> .config <<EOF
         CONFIG_PACKAGE_luci-theme-argon=y
         CONFIG_PACKAGE_luci-theme-opentomcat=y
-        CONFIG_PACKAGE_luci-theme-btmod=m
+        CONFIG_PACKAGE_luci-theme-btmod=y
         EOF
         # 常用软件包:
-        cat >> .config <<EOF
-        CONFIG_PACKAGE_curl=y
-        CONFIG_PACKAGE_wget=y
-        EOF
+        # cat >> .config <<EOF
+        # CONFIG_PACKAGE_curl=y
+        # CONFIG_PACKAGE_wget=y
+        # EOF
         # 驱动Network Devices:
         cat >> .config <<EOF
         CONFIG_PACKAGE_r8169-firmware=y
@@ -368,10 +368,10 @@ jobs:
      - name: Upload Firmware
        uses: actions/upload-artifact@main
        with:
-          name: SirpdboyOpenWrt-IPV4-mini-Firmware
+          name: SirpdboyOpenWrt-IPV6-mini-Firmware
           path: ./Firmware/
      - name: Upload  IPK
        uses: actions/upload-artifact@main
        with:
-          name: SirpdboyOpenWrt-IPV4-Ipk
+          name: SirpdboyOpenWrt-IPV6-Ipk
           path: ./openwrt/bin/packages/
