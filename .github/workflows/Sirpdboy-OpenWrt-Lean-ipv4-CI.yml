@@ -102,13 +102,14 @@ jobs:
         CONFIG_PACKAGE_ipv6helper=y
         EOF 
         # 多文件系统支持:
-        # cat >> .config <<EOF
-        # CONFIG_PACKAGE_kmod-fs-nfs=y
-        # CONFIG_PACKAGE_kmod-fs-nfs-common=y
-        # CONFIG_PACKAGE_kmod-fs-nfs-v3=y
-        # CONFIG_PACKAGE_kmod-fs-nfs-v4=y
-        # CONFIG_PACKAGE_kmod-fs-squashfs=y
-        # EOF
+        cat >> .config <<EOF
+        CONFIG_PACKAGE_kmod-fs-nfs=y
+        CONFIG_PACKAGE_kmod-fs-nfs-common=y
+        CONFIG_PACKAGE_kmod-fs-nfs-v3=y
+        CONFIG_PACKAGE_kmod-fs-nfs-v4=y
+        CONFIG_PACKAGE_kmod-fs-ntfs=y
+        CONFIG_PACKAGE_kmod-fs-squashfs=y
+        EOF
         # USB3.0支持:
         cat >> .config <<EOF
         CONFIG_PACKAGE_kmod-usb-ehci=y
@@ -129,7 +130,7 @@ jobs:
         CONFIG_PACKAGE_luci-app-autopoweroff=y
         # CONFIG_PACKAGE_autosamba is not set
         # CONFIG_PACKAGE_luci-app-accesscontrol is not set
-        CONFIG_PACKAGE_luci-app-adbyby-plus=y
+        CONFIG_PACKAGE_luci-app-adbyby-plus=m
         # CONFIG_PACKAGE_luci-app-ipsec-vpnd is not set
         CONFIG_PACKAGE_luci-app-nlbwmon=y
         # CONFIG_PACKAGE_luci-app-unblockmusic is not set
