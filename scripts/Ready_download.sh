@@ -30,7 +30,7 @@ sed -i 's/家庭云//g' package/lean/luci-app-familycloud/luasrc/controller/fami
 sed -i 's/$(VERSION_DIST_SANITIZED)/$(shell date +%Y%m%d)-$(VERSION_DIST_SANITIZED)/g' include/image.mk
 wget -P package/lean/autocore/files  https://raw.githubusercontent.com/siropboy/other/master/patch/autocore/files/index.htm
 wget -P package/lean/autocore/files https://raw.githubusercontent.com/siropboy/other/master/patch/autocore/files/sbin/cpuinfo
-sed -i 's/Sirpdboy/S$(shell date +%Y%m%d) Sirpdboy/g' package/lean/default-settings/files/zzz-default-settings
+#sed -i 's/Sirpdboy/S$(shell date +%Y%m%d) Sirpdboy/g' package/lean/default-settings/files/zzz-default-settings
 ./scripts/feeds install -a
 cd ../
 exit 0
