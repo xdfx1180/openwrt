@@ -351,7 +351,7 @@ jobs:
        run: |
           cd openwrt
           echo -e "$(nproc) thread build."
-          make -j$(nproc) V=s
+          make -j$(nproc) || make -j1 V=s
      - name: Single-thread  Compile Openwrt
        if: failure()
        run: |
