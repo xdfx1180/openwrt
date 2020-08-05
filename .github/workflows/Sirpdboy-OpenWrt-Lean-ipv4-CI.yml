@@ -5,8 +5,8 @@
 
 name: Sirpdboy-OpenWrt-Lean-ipv6-mini-CI
 on:
-  schedule:
-    - cron: 0 20 * * *
+  #schedule:
+  #  - cron: 0 20 * * *
   push:
     tags:
       - '*'
