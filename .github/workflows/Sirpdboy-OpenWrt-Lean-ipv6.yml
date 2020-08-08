@@ -122,7 +122,7 @@ jobs:
         # 固件空间大小:
         cat >> .config <<EOF
         CONFIG_TARGET_KERNEL_PARTSIZE=20
-        CONFIG_TARGET_ROOTFS_PARTSIZE=850
+        CONFIG_TARGET_ROOTFS_PARTSIZE=930
         CONFIG_ZSTD_OPTIMIZE_O3=y
         EOF
         # 常用LuCI插件选择:
@@ -156,13 +156,13 @@ jobs:
         CONFIG_PACKAGE_luci-app-minidlna=m
         CONFIG_PACKAGE_luci-app-mwan3=y
         CONFIG_PACKAGE_luci-app-netdata=y
-        CONFIG_PACKAGE_luci-app-nlbwmon=y
+        CONFIG_PACKAGE_luci-app-nlbwmon=m
         CONFIG_PACKAGE_luci-app-oaf=y
         CONFIG_PACKAGE_luci-app-openclash=m
         CONFIG_PACKAGE_luci-app-passwall=y
         CONFIG_PACKAGE_luci-app-qbittorrent=y
         CONFIG_PACKAGE_luci-app-serverchan=y
-        CONFIG_PACKAGE_luci-app-smartdns=y
+        CONFIG_PACKAGE_luci-app-smartdns=m
         CONFIG_PACKAGE_luci-app-smartinfo=y
         CONFIG_PACKAGE_luci-app-softethervpn=m
         CONFIG_PACKAGE_luci-app-syncdial=y
